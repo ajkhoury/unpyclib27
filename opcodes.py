@@ -77,12 +77,12 @@ opcodes = {
     0x20 : ['SLICE+2', 0, 'Implements TOS = TOS1[:TOS].'],
     0x21 : ['SLICE+3', 0, 'Implements TOS = TOS2[TOS1:TOS].'],
     
-	0x28 : ['STORE_SLICE', 0, 'Implements TOS[:] = TOS1.'],
+    0x28 : ['STORE_SLICE', 0, 'Implements TOS[:] = TOS1.'],
     0x29 : ['STORE_SLICE+1', 0, 'Implements TOS1[TOS:] = TOS2.'],
     0x2A : ['STORE_SLICE+2', 0, 'Implements TOS1[:TOS] = TOS2.'],
     0x2B : ['STORE_SLICE+3', 0, 'Implements TOS2[TOS1:TOS] = TOS3.'],
     
-	0x32 : ['DELETE_SLICE', 0, 'Implements del TOS[:].'],
+    0x32 : ['DELETE_SLICE', 0, 'Implements del TOS[:].'],
     0x33 : ['DELETE_SLICE+1', 0, 'Implements del TOS1[TOS:].'],
     0x34 : ['DELETE_SLICE+2', 0, 'Implements del TOS1[:TOS].'],
     0x35 : ['DELETE_SLICE+3', 0, 'Implements del TOS2[TOS1:TOS].'],
@@ -104,7 +104,7 @@ opcodes = {
     0x43 : ['INPLACE_POWER', 0, 'Implements in-place TOS = TOS1 ** TOS.'],
     0x44 : ['GET_ITER', 0, 'Implements TOS = iter(TOS).'],
    
-	0x46 : ['PRINT_EXPR', 0,
+    0x46 : ['PRINT_EXPR', 0,
             'Implements the expression statement for the interactive mode. ' \
             'TOS is removed from the stack and printed. In non-interactive ' \
             'mode, an expression statement is terminated with POP_STACK.'],
@@ -191,8 +191,7 @@ opcodes = {
             'new value, push it on the stack (leaving the iterator below ' \
             'it). If the iterator indicates it is exhausted TOS is popped, ' \
             'and the byte code counter is incremented by /delta/.'],
-
-	0x5E : ['LIST_APPEND', 2, 'Added in Python 2.7'],
+    0x5E : ['LIST_APPEND', 2, 'Added in Python 2.7'],
 	
     0x5F : ['STORE_ATTR', 2, 'Implements TOS.name = TOS1, where /namei/ is the index of name in co_names.'],
     0x60 : ['DELETE_ATTR', 2, 'Implements del TOS.name, using /namei/ as index into co_names.'],
@@ -207,7 +206,7 @@ opcodes = {
     0x66 : ['BUILD_TUPLE', 2, 'Creates a tuple consuming /count/ items from the stack, and pushes the resulting tuple onto the stack.'],
     0x67 : ['BUILD_LIST', 2, 'Works as BUILD_TUPLE(/count/), but creates a list.'],
     0x68 : ['BUILD_SET', 2, 'Pushes a new empty dictionary object onto the stack. The argument is ignored and set to /zero/ by the compiler.'],
-	0x69 : ['BUILD_MAP', 2, 'Pushes a new empty dictionary object onto the stack. The argument is ignored and set to /zero/ by the compiler.'],
+    0x69 : ['BUILD_MAP', 2, 'Pushes a new empty dictionary object onto the stack. The argument is ignored and set to /zero/ by the compiler.'],
     0x6A : ['LOAD_ATTR', 2, 'Replaces TOS with getattr(TOS, co_names[/namei/]).'],
     0x6B : ['COMPARE_OP', 2, 'Performs a Boolean operation. The operation name can be found in cmp_op[/opname/].'],
     0x6C : ['IMPORT_NAME', 2,
@@ -220,12 +219,11 @@ opcodes = {
             'in TOS. The resulting object is pushed onto the stack, to ' \
             'be subsequently stored by a STORE_FAST instruction. '],
     0x6E : ['JUMP_FORWARD', 2, 'Increments byte code counter by /delta/.'],
-	0x6F : ['JUMP_IF_FALSE_OR_POP', 2, 'Added in Python 2.7'],
+    0x6F : ['JUMP_IF_FALSE_OR_POP', 2, 'Added in Python 2.7'],
     0x70 : ['JUMP_IF_TRUE_OR_POP', 2, 'Added in Python 2.7'],
-    
-	0x71 : ['JUMP_ABSOLUTE', 2, 'Set byte code counter to /target/.'],
+    0x71 : ['JUMP_ABSOLUTE', 2, 'Set byte code counter to /target/.'],
     0x72 : ['POP_JUMP_IF_FALSE', 2, 'Added in Python 2.7'],
-	0x73 : ['POP_JUMP_IF_TRUE', 2, 'Added in Python 2.7'],
+    0x73 : ['POP_JUMP_IF_TRUE', 2, 'Added in Python 2.7'],
 	
     0x74 : ['LOAD_GLOBAL', 2, 'Loads the global named co_names[/namei/] onto the stack.'],
     0x77 : ['CONTINUE_LOOP', 2,
@@ -298,12 +296,12 @@ opcodes = {
             'The top element on the stack contains the keyword arguments ' \
             'dictionary, followed by the variable-arguments tuple, ' \
             'followed by explicit keyword and positional arguments.'],
-	0x8F : ['SETUP_WITH', 2, 'Added in Python 2.7'],
-			
+    0x8F : ['SETUP_WITH', 2, 'Added in Python 2.7'],
+    
     0x91 : ['EXTENDED_ARG', 2, 'Support for opargs more than 16 bits long.'],
-	
-	0x92 : ['SET_ADD', 2, 'Added in Python 2.7'],
-	0x93 : ['MAP_ADD', 2, 'Added in Python 2.7']
+    
+    0x92 : ['SET_ADD', 2, 'Added in Python 2.7'],
+    0x93 : ['MAP_ADD', 2, 'Added in Python 2.7']
 }
 
 cmp_op = {
